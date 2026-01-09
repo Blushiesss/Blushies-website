@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    background-image: url('/assets/images/landingbgd.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+head {
+    
+    background-color: #714bda;
+}
+
+#navbar {
+    background-color: #333;
+    padding: 10px;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+}
