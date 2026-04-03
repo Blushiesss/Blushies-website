@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>💬 World Chat</h1>
+            <p>Messages never clear (last 1000 shown)</p>
+        </div>
+        <div class="messages" id="messages">
+            <div class="status">Loading messages...</div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="username" placeholder="Your name" maxlength="30">
+            <input type="text" id="message" placeholder="Type a message..." maxlength="500" onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="status" id="status">💾 Messages saved in Cloudflare D1</div>
+    </div>
+
+    <script src="/js/chat.js"></script>
+</body>
+</html>
