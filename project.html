@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/project.css">
+
+    <nav id="navbar"></nav>
+    <script src="assets/js/add_Menu.js" defer></script>
 </head>
 
 <body>
+    <h1>Projects</h1>
+    <input type="text" id="searchBar" placeholder="Search projects..." onkeyup="filterProjects()">
+    <button onclick="search()">Search</button>
+    <button onclick="filterByTag()">Filter</button>
+    <button onclick="sortProjects()">Sort By</button>
+
     
+    <div class="project-list">
+        <div class="project-item">
+            <h2>Project 1</h2>
+            <p>Description of Project 1.</p>
+        </div>
+        <div class="project-item">
+            <h2>Project 2</h2>
+            <p>Description of Project 2.</p>
+        </div>
+        <div class="project-item">
+            <h2>Project 3</h2>
+            <p>Description of Project 3.</p>
+        </div>
+    </div>
 
 </body>
