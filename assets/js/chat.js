@@ -33,7 +33,7 @@ async function loadMessages() {
         container.scrollTop = container.scrollHeight;
     } catch (error) {
         console.error('Load error:', error);
-        document.getElementById('messages').innerHTML = '<div class="status"> Failed to load messages</div>';
+        document.getElementById('messages').innerHTML = '<div class="status">Failed to load messages</div>';
     }
 }
 
