@@ -33,7 +33,7 @@ async function loadMessages() {
         container.scrollTop = container.scrollHeight;
     } catch (error) {
         console.error('Load error:', error);
-        document.getElementById('messages').innerHTML = '<div class="status">❌ Failed to load messages</div>';
+        document.getElementById('messages').innerHTML = '<div class="status"> Failed to load messages</div>';
     }
 }
 
@@ -42,15 +42,15 @@ async function sendMessage() {
     const content = document.getElementById('message').value.trim();
     
     if (!username) {
-        showStatus('❌ Please enter your name', true);
+        showStatus('Please enter your name', true);
         return;
     }
     if (!content) {
-        showStatus('❌ Please enter a message', true);
+        showStatus('Please enter a message', true);
         return;
     }
     
-    showStatus('📤 Sending...');
+    showStatus('Sending...');
     
     try {
         const response = await fetch('/api/chat/messages', {
@@ -61,15 +61,15 @@ async function sendMessage() {
         
         if (response.ok) {
             document.getElementById('message').value = '';
-            showStatus('✅ Message sent!');
+            showStatus('Message sent!');
             loadMessages();
         } else {
             const error = await response.json();
-            showStatus('❌ ' + (error.error || 'Failed to send'), true);
+            showStatus((error.error || 'Failed to send'), true);
         }
     } catch (error) {
         console.error('Send error:', error);
-        showStatus('❌ Network error', true);
+        showStatus('Network error', true);
     }
 }
 
@@ -79,7 +79,7 @@ function showStatus(msg, isError = false) {
     statusDiv.style.color = isError ? '#ef4444' : '#64748b';
     setTimeout(() => {
         if (statusDiv.textContent === msg) {
-            statusDiv.textContent = '💾 Messages saved in Cloudflare D1';
+            statusDiv.textContent = 'Messages saved in Cloudflare D1';
             statusDiv.style.color = '#64748b';
         }
     }, 2000);
