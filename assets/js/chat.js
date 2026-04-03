@@ -108,7 +108,8 @@ setInterval(async () => {
     await loadMessages();
     
     // Only auto-scroll if they were near bottom before refresh
-    if (wasAtBottom) {
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
+    // no need to autoscoll at all
+    // if (wasAtBottom) {
+    //     messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    // }
 }, 5000);
