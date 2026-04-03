@@ -79,7 +79,7 @@ function showStatus(msg, isError = false) {
     statusDiv.style.color = isError ? '#ef4444' : '#64748b';
     setTimeout(() => {
         if (statusDiv.textContent === msg) {
-            statusDiv.textContent = 'Messages saved in Cloudflare D1';
+            statusDiv.textContent = 'Messages are live';
             statusDiv.style.color = '#64748b';
         }
     }, 2000);
