@@ -101,6 +101,9 @@ setInterval(async () => {
     const messagesDiv = document.getElementById('messages');
     // Check if user is within 100px of bottom
     wasAtBottom = (messagesDiv.scrollHeight - messagesDiv.scrollTop - messagesDiv.clientHeight) < 100;
+    console.log('Auto-refreshing messages. User was at bottom:', wasAtBottom);
+    console.log('Before refresh - scrollTop:', messagesDiv.scrollTop, 'scrollHeight:', messagesDiv.scrollHeight, 'clientHeight:', messagesDiv.clientHeight);
+    console.log('Before refresh - distance from bottom:', messagesDiv.scrollHeight - messagesDiv.scrollTop - messagesDiv.clientHeight);
     
     await loadMessages();
     
