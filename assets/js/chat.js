@@ -30,7 +30,7 @@ async function loadMessages() {
             `;
         }).join('');
         
-        container.scrollTop = container.scrollHeight;
+        //container.scrollTop = container.scrollHeight;
     } catch (error) {
         console.error('Load error:', error);
         document.getElementById('messages').innerHTML = '<div class="status">Failed to load messages</div>';
@@ -94,5 +94,18 @@ function escapeHtml(str) {
 // Load messages when page loads
 loadMessages();
 
-// Refresh every 5 seconds (for multi-user)
-setInterval(loadMessages, 5000);
+// Only auto-scroll if user was already near the bottom
+let wasAtBottom = true;
+
+setInterval(async () => {
+    const messagesDiv = document.getElementById('messages');
+    // Check if user is within 100px of bottom
+    wasAtBottom = (messagesDiv.scrollHeight - messagesDiv.scrollTop - messagesDiv.clientHeight) < 100;
+    
+    await loadMessages();
+    
+    // Only auto-scroll if they were near bottom before refresh
+    if (wasAtBottom) {
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+}, 5000);
