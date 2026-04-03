@@ -77,12 +77,12 @@ function showStatus(msg, isError = false) {
     const statusDiv = document.getElementById('status');
     statusDiv.textContent = msg;
     statusDiv.style.color = isError ? '#ef4444' : '#64748b';
-    // setTimeout(() => {
-    //     if (statusDiv.textContent === msg) {
-    //         statusDiv.textContent = 'Messages saved in Cloudflare D1';
-    //         statusDiv.style.color = '#64748b';
-    //     }
-    // }, 2000);
+    setTimeout(() => {
+        if (statusDiv.textContent === msg) {
+            statusDiv.textContent = 'Messages saved in Cloudflare D1';
+            statusDiv.style.color = '#64748b';
+        }
+    }, 2000);
 }
 
 function escapeHtml(str) {
